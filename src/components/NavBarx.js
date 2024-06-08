@@ -8,7 +8,7 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 	const navigate = useNavigate();
     const searchFunc = async (e) => {
 		e.preventDefault()
-		navigate(`/search?query=${searchTerm}`)
+		navigate(`/PocketDex/search?query=${searchTerm}`)
     }
 	const logout = () => {
 		onLogout();
@@ -17,17 +17,17 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 	return (
 		<Navbar className="navBar">
 			<Container>
-				<Navbar.Brand href="/">PocketDex</Navbar.Brand>
+				<Navbar.Brand href="/PocketDex/">PocketDex</Navbar.Brand>
 				<Navbar.Toggle />
 				<Navbar.Collapse className="justify-content-end">
 					<Nav className="me-auto">
-						<Nav.Link href="/">Home</Nav.Link>
-						<Nav.Link href="/relations">
+						<Nav.Link href="/PocketDex/">Home</Nav.Link>
+						<Nav.Link href="/PocketDex/relations">
 							Damage Relations and Type Advantages
 						</Nav.Link>
 						{loggedInEmail ? (
 							<>
-								<Nav.Link href="/profile">Profile</Nav.Link>
+								<Nav.Link href="/PocketDex/profile">Profile</Nav.Link>
 							</>
 						) : (
 							<></>
@@ -55,9 +55,9 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 						</>
 					) : (
 						<>
-							<Nav.Link href="/signup">Signup </Nav.Link>
+							<Nav.Link href="/PocketDex/signup">Signup </Nav.Link>
 							<Navbar.Text className="space">/</Navbar.Text>
-							<Nav.Link href="/login" className="loginLink">
+							<Nav.Link href="/PocketDex/login" className="loginLink">
 								Login
 							</Nav.Link>
 						</>

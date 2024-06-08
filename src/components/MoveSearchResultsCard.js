@@ -30,7 +30,7 @@ const MoveSearchResultsCard = ({move}) => {
 
 	return (
 		<>
-			<a href={`/move?move=${moveID}`}>
+			<a href={`/PocketDex/move?move=${moveID}`}>
 				<div className={`move searchResult ${type}`}>
                     <h2 className='name' style={{textDecoration:"underline", lineHeight: "40px"}}>{
                         move.name.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())

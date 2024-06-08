@@ -95,7 +95,7 @@ const PokemonSearchResultCard = (props) => {
         <>
             {pokemonData ? (
                 <div className={`pokemon searchResult ${pokemonData.types[0].type.name}`}>
-                    <a href={`/pokemon?pokemon=${pokemonData.id}`}>
+                    <a href={`/PocketDex/pokemon?pokemon=${pokemonData.id}`}>
                         <div className="pokemonNameandTypes">
                             <section>
                                 <h4>

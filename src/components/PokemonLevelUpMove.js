@@ -24,7 +24,7 @@ const PokemonLevelUpMove = ({ move }) => {
 
 	return (
 		<>
-			<a href={`/move?move=${moveID}`}>
+			<a href={`/PocketDex/move?move=${moveID}`}>
 				<div className={`move ${type}`}>
 					<h5>
 						{move.move.name?.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}

@@ -22,7 +22,7 @@ const PokemonAbility = (props) => {
   return (
     <>
 	<div className='ability'>
-      <a href={`/ability?ability=${abilityID}`}>
+      <a href={`/PocketDex/ability?ability=${abilityID}`}>
         {
           props.ability.name?.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
         }
