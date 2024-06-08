@@ -1,0 +1,8 @@
+@import '../index.scss';
+
+.ability{
+    @include container;
+    &:hover{
+        background-color: darken($container-BG, 5%) !important;
+    }
+}
