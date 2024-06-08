@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/PocketDex/static/css/main.2bb6c1f2.css",
-    "main.js": "/PocketDex/static/js/main.55db3497.js",
+    "main.js": "/PocketDex/static/js/main.ec331143.js",
     "static/js/453.d5e0fbd1.chunk.js": "/PocketDex/static/js/453.d5e0fbd1.chunk.js",
     "static/media/bootstrap-icons.woff?": "/PocketDex/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/PocketDex/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "static/media/PokemonSolidNormal-xyWR.ttf": "/PocketDex/static/media/PokemonSolidNormal-xyWR.5d60be1f7ff5fcc21fc1.ttf",
     "index.html": "/PocketDex/index.html",
     "main.2bb6c1f2.css.map": "/PocketDex/static/css/main.2bb6c1f2.css.map",
-    "main.55db3497.js.map": "/PocketDex/static/js/main.55db3497.js.map",
+    "main.ec331143.js.map": "/PocketDex/static/js/main.ec331143.js.map",
     "453.d5e0fbd1.chunk.js.map": "/PocketDex/static/js/453.d5e0fbd1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2bb6c1f2.css",
-    "static/js/main.55db3497.js"
+    "static/js/main.ec331143.js"
   ]
 }
