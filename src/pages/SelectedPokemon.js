@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import PokemonCard from "../components/PokemonCard";
 import "./pokemonPage.scss";
@@ -19,8 +19,9 @@ import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const SelectedPokemon = () => {
+	let { pokemonparams } = useParams()
 	const [queryParameters] = useSearchParams();
-	const [selectedPokemon, setSelectedPokemon] = useState("");
+	const [selectedPokemon, setSelectedPokemon] = useState(pokemonparams?pokemonparams:'25');
 	const [pokemonData, setPokemonData] = useState();
 	const [speciesData, setSpeciesData] = useState();
 	const [flavorText, setFlavorText] = useState("");
@@ -48,7 +49,7 @@ const SelectedPokemon = () => {
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 	useEffect(() => {
-		setSelectedPokemon(queryParameters.get("pokemon"));
+		//setSelectedPokemon(queryParameters.get("pokemon"));
 
 		const fetchPokemonData = async () => {
 			try {

@@ -69,7 +69,7 @@ const PokemonCard = (props) => {
 	return (
         <>
         {pokemonData !== null && pokemonData !== undefined ? (
-            <a href={`/PocketDex/pokemon?pokemon=${pokemonData.id}`}>
+            <a href={`/pokemon?pokemon=${pokemonData.id}`}>
                 <div className="pokemonCard" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <section className="cardNameContainer">
                         <p className="cardName">

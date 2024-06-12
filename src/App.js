@@ -28,19 +28,19 @@ function App() {
 
     return (
         <div className="App">
-            <BrowserRouter>
+            <BrowserRouter basename="/PocketDex">
                 <NavBarx loggedInEmail={loggedInEmail} onLogout={handleLogout} />
                 <div className="pages">
                     <Routes>
-                        <Route path="/PocketDex/" element={<Landing />} />
-                        <Route path="/PocketDex/search" element={<Search />} />
-                        <Route path="/PocketDex/login" element={<Login onLogin={handleLogin} />} />
-                        <Route path="/PocketDex/signup" element={<Signup onLogin={handleLogin} />} />
-                        <Route path="/PocketDex/pokemon" element={<SelectedPokemon onEmailChange={handleLogin} />} />
-                        <Route path="/PocketDex/profile" element={<Profile />} />
-                        <Route path="/PocketDex/move" element={<PokemonMove />} />
-                        <Route path="/PocketDex/ability" element={<PokemonAbilityPage />} />
-                        <Route path="/PocketDex/relations" element={<DamageRelations />} />
+                        <Route path="/" element={<Landing />} />
+                        <Route path="/search" element={<Search />} />
+                        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+                        <Route path="/signup" element={<Signup onLogin={handleLogin} />} />
+                        <Route path="/pokemon" element={<SelectedPokemon onEmailChange={handleLogin} />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/move" element={<PokemonMove />} />
+                        <Route path="/ability" element={<PokemonAbilityPage />} />
+                        <Route path="/relations" element={<DamageRelations />} />
                     </Routes>
                 </div>
             </BrowserRouter>
