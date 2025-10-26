@@ -8,7 +8,7 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 	const navigate = useNavigate();
     const searchFunc = async (e) => {
 		e.preventDefault()
-		navigate(`/PocketDex/search?query=${searchTerm}`)
+		navigate(`/search?query=${searchTerm}`)
     }
 	const logout = () => {
 		onLogout();
