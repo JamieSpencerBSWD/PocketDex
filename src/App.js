@@ -28,7 +28,7 @@ function App() {
 
     return (
         <div className="App">
-            <BrowserRouter>
+            <BrowserRouter basename="/PocketDex">
                 <NavBarx loggedInEmail={loggedInEmail} onLogout={handleLogout} />
                 <div className="pages">
                     <Routes>
