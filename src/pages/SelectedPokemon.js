@@ -49,7 +49,7 @@ const SelectedPokemon = () => {
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 	useEffect(() => {
-		//setSelectedPokemon(queryParameters.get("pokemon"));
+		setSelectedPokemon(queryParameters.get("pokemon"));
 
 		const fetchPokemonData = async () => {
 			try {
