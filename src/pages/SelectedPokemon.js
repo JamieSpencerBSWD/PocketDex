@@ -19,9 +19,8 @@ import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const SelectedPokemon = () => {
-	let { pokemonparams } = useParams()
 	const [queryParameters] = useSearchParams();
-	const [selectedPokemon, setSelectedPokemon] = useState(pokemonparams?pokemonparams:'25');
+	const [selectedPokemon, setSelectedPokemon] = useState('');
 	const [pokemonData, setPokemonData] = useState();
 	const [speciesData, setSpeciesData] = useState();
 	const [flavorText, setFlavorText] = useState("");

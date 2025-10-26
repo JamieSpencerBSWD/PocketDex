@@ -31,6 +31,10 @@ a {
 	}
 }
 
+.pages {
+  padding-top: 120px; // or whatever your headerContainer’s total height is
+}
+
 .login,
 .signup {
 	@include flexCenter;
