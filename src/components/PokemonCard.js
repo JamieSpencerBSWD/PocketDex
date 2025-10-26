@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./pokemonCard.scss";
+import { Link } from "react-router-dom";
 const PokemonCard = (props) => {
 	const [pokemonData, setPokemonData] = useState();
     const [isHovered, setIsHovered] = useState(false);
@@ -69,7 +70,7 @@ const PokemonCard = (props) => {
 	return (
         <>
         {pokemonData !== null && pokemonData !== undefined ? (
-            <a href={`/pokemon?pokemon=${pokemonData.id}`}>
+            <Link to={`/pokemon?pokemon=${pokemonData.id}`}>
                 <div className="pokemonCard" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <section className="cardNameContainer">
                         <p className="cardName">
@@ -122,7 +123,7 @@ const PokemonCard = (props) => {
                         </div>
                     </section>
                 </div>
-            </a>
+            </Link>
         ) : (
             <div className="loader"></div>
         )}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Container, Nav, Form, Button } from "react-bootstrap";
 import './navbar.scss';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBarx = ({ loggedInEmail, onLogout }) => {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -17,14 +17,22 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 	return (
 		<Navbar className="navBar">
 			<Container>
-				<Navbar.Brand href="/">PocketDex</Navbar.Brand>
+				<Navbar.Brand to="/"><Link to={"/"}>PocketDex</Link></Navbar.Brand>
 				<Navbar.Toggle />
 				<Navbar.Collapse className="justify-content-end">
 					<Nav className="me-auto">
-						<Nav.Link href="/">Home</Nav.Link>
-						<Nav.Link href="/relations">
-							Damage Relations and Type Advantages
+						<Nav.Link to="/">
+							<Link to="/">
+								Home
+							</Link>
 						</Nav.Link>
+						
+						<Nav.Link href="/relations">
+							<Link to="/relations">
+								Damage Relations and Type Advantages
+							</Link>
+						</Nav.Link>
+						
 						{loggedInEmail ? (
 							<>
 								<Nav.Link href="/profile">Profile</Nav.Link>
