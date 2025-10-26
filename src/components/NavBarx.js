@@ -27,7 +27,7 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 							</Link>
 						</Nav.Link>
 						
-						<Nav.Link href="/relations">
+						<Nav.Link to="/relations">
 							<Link to="/relations">
 								Damage Relations and Type Advantages
 							</Link>
