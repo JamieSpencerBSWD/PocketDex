@@ -15,64 +15,32 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 	};
 
 	return (
-		<Navbar className="navBar">
-			<Container>
-				<Navbar.Brand to="/"><Link to={"/"}>PocketDex</Link></Navbar.Brand>
-				<Navbar.Toggle />
-				<Navbar.Collapse className="justify-content-end">
-					<Nav className="me-auto">
-						<Nav.Link to="/">
-							<Link to="/">
-								Home
-							</Link>
-						</Nav.Link>
-						
-						<Nav.Link to="/relations">
-							<Link to="/relations">
-								Damage Relations and Type Advantages
-							</Link>
-						</Nav.Link>
-						
-						{loggedInEmail ? (
-							<>
-								<Nav.Link href="/profile">Profile</Nav.Link>
-							</>
-						) : (
-							<></>
-						)}
-						<Form onSubmit={searchFunc} className="d-flex">
-							<Form.Control
-								required
-								type="search"
-								placeholder="Search"
-								className="me-2"
-								aria-label="Search"
-								value={searchTerm}
-								onChange={(e) => setSearchTerm(e.target.value)}
-							/>
-							<Button type="submit" className="button loginBtn">Search</Button>
-						</Form>
-						
-					</Nav>
-					{loggedInEmail ? (
-						<>
-							<Navbar.Text>Welcome {loggedInEmail}</Navbar.Text>{" "}
-							<Nav.Link onClick={logout} className="loginLink">
-								Logout
-							</Nav.Link>
-						</>
-					) : (
-						<>
-							<Nav.Link href="/signup">Signup </Nav.Link>
-							<Navbar.Text className="space">/</Navbar.Text>
-							<Nav.Link href="/login" className="loginLink">
-								Login
-							</Nav.Link>
-						</>
-					)}
-				</Navbar.Collapse>
-			</Container>
-		</Navbar>
+		<div className='headerContainer'>
+			<Link to="/">
+				<p className='title text-size-large'>
+				
+				PocketDex
+				</p>
+			</Link>
+			<Link to="/">
+				Home
+			</Link>
+			<Link to="/relations">
+				Damage Relations and Type Advantages
+			</Link>
+			<Form onSubmit={searchFunc} className="search-box">
+				<Form.Control
+					required
+					type="search"
+					placeholder="Search"
+					className="me-2"
+					aria-label="Search"
+					value={searchTerm}
+					onChange={(e) => setSearchTerm(e.target.value)}
+				/>
+				<Button type="submit" className="button loginBtn">Search</Button>
+			</Form>
+		</div>
 	);
 };
 
