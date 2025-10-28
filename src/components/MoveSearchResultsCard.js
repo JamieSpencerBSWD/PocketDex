@@ -31,7 +31,7 @@ const MoveSearchResultsCard = ({move}) => {
 
 	return (
 		<>
-		
+		{moveData !== null &&  moveData !== undefined ? (
 			<Link to={`/move?move=${moveID}`}>
 				<div className={`move searchResult ${type}`}>
                     <h2 className='name' style={{textDecoration:"underline", lineHeight: "40px"}}>{
@@ -47,6 +47,11 @@ const MoveSearchResultsCard = ({move}) => {
                     <h6 className='effect'>{moveData?.effect_entries[0]?.short_effect}</h6>
 				</div>
 			</Link>
+		): (
+    <div>
+		<div className='loader'>Loading Move...</div>
+    </div>
+    )}
 		</>
 	);
 }
