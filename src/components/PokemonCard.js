@@ -70,9 +70,11 @@ const PokemonCard = (props) => {
 	return (
         <>
         {pokemonData !== null && pokemonData !== undefined ? (
-            <Link to={`/pokemon?pokemon=${pokemonData.id}`}>
+            <Link to={`/pokemon?pokemon=${pokemonData.id}`}	>
                 <div className="pokemonCard" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                    <section className="cardNameContainer">
+                    <section className="cardNameContainer" style={{backgroundColor: pokemonData
+                                            ? getTypeColor(pokemonData?.types[0].type.name)
+                                            : "white"}}>
                         <p className="cardName">
                             {"#" +
                                 pokemonData.id.toString().padStart(4, "0") +
@@ -107,9 +109,10 @@ const PokemonCard = (props) => {
                             )}
                         </div>
                     </section>
-
-                    <section className="">
-                        <div className="pokemonCardTypes">
+                    <section className="" >
+                        <div className="pokemonCardTypes" style={{backgroundColor: pokemonData
+                                            ? (pokemonData?.types.length > 1 ?getTypeColor(pokemonData?.types[1]?.type.name):getTypeColor(pokemonData?.types[0]?.type.name))
+                                            : "white"}}>
                             {pokemonData.types?.map((type) => (
                                 <p
                                     className={`pokemonCardType ${type.type.name}`}

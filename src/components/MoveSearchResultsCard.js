@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./movessearchresult.scss";
+import { Link } from 'react-router-dom';
 
 const MoveSearchResultsCard = ({move}) => {
     const [type, setType] = useState("");
@@ -30,10 +31,11 @@ const MoveSearchResultsCard = ({move}) => {
 
 	return (
 		<>
-			<a href={`/PocketDex/move?move=${moveID}`}>
+		
+			<Link to={`/move?move=${moveID}`}>
 				<div className={`move searchResult ${type}`}>
                     <h2 className='name' style={{textDecoration:"underline", lineHeight: "40px"}}>{
-                        move.name.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
+                        move?.name.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
                     }</h2>
                     <div className={`moveHeader`}>
 						<h4 className='pp'>Accuracy: {moveData?.accuracy}</h4>
@@ -44,7 +46,7 @@ const MoveSearchResultsCard = ({move}) => {
 					</div>
                     <h6 className='effect'>{moveData?.effect_entries[0]?.short_effect}</h6>
 				</div>
-			</a>
+			</Link>
 		</>
 	);
 }

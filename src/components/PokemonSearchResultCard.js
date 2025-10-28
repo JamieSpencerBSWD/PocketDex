@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './pokemonSearchResult.scss';
+import { Link } from "react-router-dom";
 
 const PokemonSearchResultCard = (props) => {
     const [pokemonData, setPokemonData] = useState();
@@ -95,7 +96,7 @@ const PokemonSearchResultCard = (props) => {
         <>
             {pokemonData ? (
                 <div className={`pokemon searchResult ${pokemonData.types[0].type.name}`}>
-                    <a href={`/pokemon?pokemon=${pokemonData.id}`}>
+                    <Link to={`/pokemon?pokemon=${pokemonData.id}`}>
                         <div className="pokemonNameandTypes">
                             <section>
                                 <h4>
@@ -148,7 +149,7 @@ const PokemonSearchResultCard = (props) => {
                             </section>
 
                         </div>
-                    </a>
+                    </Link>
                 </div>
             ) : (
                 <div className="loader"></div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -118,7 +118,8 @@ const Login = ({ onLogin }) => {
 							onClick={() => setShowPassword(!showPassword)}
 						></i>
 						<p className="forgot">
-							<a href="/home">Forgot Password</a>
+							<Link to="/home">Forgot Password</Link>
+							
 						</p>
 						<ErrorMessage
 							errors={errors}
@@ -149,9 +150,9 @@ const Login = ({ onLogin }) => {
 					)}
 					<div className="buttons">
 						<button className="loginBtn">Login</button>
-						<a className="signup" href="/signup">
+						<Link className="signup" to="/signup">
 							Signup
-						</a>
+						</Link>
 					</div>
 				</form>
 			</div>

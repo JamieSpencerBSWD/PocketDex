@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router";
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Signup = ({ onLogin }) => {
 	const [showPassword, setShowPassword] = useState(false);
@@ -320,9 +321,10 @@ const Signup = ({ onLogin }) => {
 					<div className="buttons">
 						
 						<button className="loginBtn">Signup</button>
-						<a className="signup" href="/login">
+						
+						<Link className="signup" to="/login">
 							Already have an account? Login instead!
-						</a>
+						</Link>
 					</div>
 				</form>
 			</div>

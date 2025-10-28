@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PokemonLevelUpMove.scss";
+import { Link } from "react-router-dom";
 
 const PokemonLevelUpMove = ({ move }) => {
 	const [type, setType] = useState("");
@@ -24,14 +25,15 @@ const PokemonLevelUpMove = ({ move }) => {
 
 	return (
 		<>
-			<a href={`/move?move=${moveID}`}>
+		
+			<Link to={`/move?move=${moveID}`}>
 				<div className={`move ${type}`}>
 					<h5>
 						{move.move.name?.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}
 					</h5>
 					<p>Learned at level {move.version_group_details[0]?.level_learned_at}</p>
 				</div>
-			</a>
+			</Link>
 		</>
 	);
 };

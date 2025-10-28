@@ -11,6 +11,7 @@ import PokemonMove from "./pages/PokemonMove";
 import PokemonAbilityPage from "./pages/PokemonAbilityPage";
 import DamageRelations from "./pages/DamageRelations";
 import { useState } from "react";
+import Moves from "./pages/Moves";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
                         <Route path="/pokemon" element={<SelectedPokemon/>} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/move" element={<PokemonMove />} />
+                        <Route path="/moves" element={<Moves/>} />
                         <Route path="/ability" element={<PokemonAbilityPage />} />
                         <Route path="/relations" element={<DamageRelations />} />
                     </Routes>

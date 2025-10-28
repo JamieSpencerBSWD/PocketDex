@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PokemonAbility.scss";
+import { Link } from "react-router-dom";
 
 const PokemonAbility = (props) => {
 	console.log("ABILITY: ", props.ability);
@@ -22,11 +23,12 @@ const PokemonAbility = (props) => {
   return (
     <>
 	<div className='ability'>
-      <a href={`/ability?ability=${abilityID}`}>
+		
+      <Link to={`/ability?ability=${abilityID}`}>
         {
           props.ability.name?.replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
         }
-      </a>
+      </Link>
       </div>
     </>
   )
