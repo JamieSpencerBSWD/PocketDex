@@ -15,13 +15,18 @@ const Moves = () => {
     try {
       const offset = movesArray.length; // fetch next batch
       const res = await axios.get(
-        `https://pokeapi.co/api/v2/move?limit=20&offset=${offset}`
+        `https://pokeapi.co/api/v2/move?limit=2000&offset=${offset}`
       );
 
       const details = await Promise.all(res.data.results.map(p => axios.get(p.url)));
-      const sorted = details.map(r => r.data).sort((a, b) => a.id - b.id);
+const sorted = details
+  .map(r => r.data)
+  .sort((a, b) => a.name.localeCompare(b.name)); // ✅ alphabetically by name
 
-      setMovesArray(prev => [...prev, ...sorted]);
+setMovesArray(prev => {
+  const combined = [...prev, ...sorted];
+  return combined.sort((a, b) => a.name.localeCompare(b.name)); // keep it sorted even after merging
+});
 	  console.log(movesArray)
     } catch (err) {
       console.error("Error fetching Pokémon:", err);
@@ -41,16 +46,21 @@ const Moves = () => {
 //   }, []);
 
   return (
-    <>
+    <section>
+      {movesArray[0] !== null &&  movesArray[0] !== undefined ? (
       <div className="searchResults">
         {movesArray.map((move) => (
           <div style={{ margin: "5%" }} key={move.id}>
-            <MoveSearchResultsCard move={move}/>
+            <MoveSearchResultsCard move={{ name: move.name, url: `https://pokeapi.co/api/v2/move/${move.id}/` }}/>
           </div>
         ))}
+        <div ref={triggerRef} style={{height:'60px'}}></div>
       </div>
-      <div ref={triggerRef} style={{height:'60px'}}></div>
-    </>
+      
+      ): (
+            <div className="loader"></div>
+        )}
+    </section>
   );
 };
 
