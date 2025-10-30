@@ -1,6 +1,7 @@
 @use "sass:color";
 // Colors
 $black: #292828ff;
+$white: #f3f3f3;
 $red: #bd3e3eff;
 $teal: #43b2c8ff;
 $teal2: #296f7c;
@@ -31,7 +32,6 @@ $container-shadow: 1px 1px 3px #1c1b1b;
 	padding: 2%;
 	border-radius: 5px;
 	background-color: $bgColor !important;
-	color: $txtColor !important;
 	border: none;
 	text-align: center;
 	align-self: center;

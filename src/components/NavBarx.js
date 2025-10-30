@@ -44,15 +44,20 @@ const NavBarx = ({ loggedInEmail, onLogout }) => {
 				PocketDex
 				</p>
 			</Link>
-			<Link to="/" style={{fontSize:'20px'}}>
-				Pokemon
-			</Link>
-			<Link to="/moves" style={{fontSize:'20px'}}>
-				Moves
-			</Link>
-			<Link to="/relations" style={{fontSize:'20px'}}>
-				Damage Relations
-			</Link>
+			<div className="linkContainer">
+				<Link to="/" className="navItem" style={{fontSize:'20px'}}>
+					Pokemon
+				</Link>
+				<Link to="/moves" className="navItem"style={{fontSize:'20px'}}>
+					Moves
+				</Link>
+				<Link to="/relations" className="navItem"style={{fontSize:'20px'}}>
+					Damage Relations
+				</Link>
+			</div>
+				
+			
+			
 			<Form onSubmit={searchFunc} className="search-box">
 				<Form.Control
 					required
